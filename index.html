@@ -3,357 +3,766 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talita Christine's Portfolio</title>
+  <title>Talita Christine | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="description" content="Portfolio of Talita Christine — Entrepreneur, Web Developer in progress, and founder of East African Naturals.">
-  <meta name="keywords" content="Talita Christine, Software Engineer, Web Developer, Portfolio, Entrepreneur, East African Naturals, Uganda">
-  <meta name="author" content="Talita Christine">
+  <meta name="description" content="Portfolio of Talita Christine — Entrepreneur, Junior Software Developer, and founder of East African Naturals, based in Kampala, Uganda.">
+  <meta name="keywords" content="Talita Christine, Talita Queen Precious, Software Engineer, Web Developer, C#, .NET, Java, SQL Server, UWP, Portfolio, Entrepreneur, East African Naturals, Kampala, Uganda">
+  <meta name="author" content="Talita Christine (Talita Queen Precious)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#talita",
+      "name": "Talita Christine",
+      "alternateName": [
+        "Talita Queen Precious",
+        "Talita Christine"
+      ],
+      "jobTitle": [
+        "Entrepreneur",
+        "Junior Software Developer",
+        "Web Developer"
+      ],
+      "description": "Entrepreneur and junior software developer based in Kampala, Uganda. Founder and CEO of East African Naturals, building digital experiences using C#, .NET, Java, JavaScript, HTML/CSS, SQL Server and MySQL.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampala",
+        "addressCountry": "UG"
+      },
+      "email": "mailto:contact@talitachristine.com",
+      "telephone": "+256788828978",
+      "url": "https://talitaprecious-pixel.github.io/talita-christine-portfolio/",
+      "sameAs": [
+        "https://www.instagram.com/tatie_bae11",
+        "https://www.linkedin.com/in/talita-christine"
+      ],
+      "knowsAbout": [
+        "C#",
+        ".NET",
+        "UWP",
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "SQL Server",
+        "MySQL",
+        "Web Development",
+        "App Development",
+        "Database Programming",
+        "Entrepreneurship",
+        "Natural Hair and Skincare"
+      ],
+      "alumniOf": [
+        {
+          "@type": "Organization",
+          "name": "Timex IT Consulting",
+          "description": "Junior Developer experience (2022–2023)."
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "#website",
+      "name": "Talita Christine | Portfolio",
+      "url": "https://talitaprecious-pixel.github.io/talita-christine-portfolio/",
+      "inLanguage": "en",
+      "author": { "@id": "#talita" },
+      "publisher": { "@id": "#talita" },
+      "description": "Portfolio of Talita Christine — Entrepreneur, Junior Software Developer, Web Developer, and founder of East African Naturals based in Kampala, Uganda."
+    },
+    {
+      "@type": "Organization",
+      "@id": "#ean",
+      "name": "East African Naturals",
+      "description": "Natural hair and skincare brand rooted in wellness, sustainability, and African heritage.",
+      "founder": { "@id": "#talita" },
+      "url": "https://talitaprecious-pixel.github.io/talita-christine-portfolio/#projects",
+      "sameAs": [
+        "https://www.instagram.com/tatie_bae11"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampala",
+        "addressCountry": "UG"
+      }
+    }
+  ]
+}
+</script>
+
+
 </head>
 <body>
 
+  <!-- Navigation -->
   <header>
     <nav>
-      <h1 class="logo">Talita Christine</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="theme-toggle">🌙</button>
+      <h1 class="logo">Talita<span>Christine</span></h1>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="photos/queena.jpeg" alt="Talita Christine" class="hero-img">
-    <h2>Hello, I’m <span>Talita</span></h2>
-    <p>Entrepreneur • Web Developer • Creative thinker • Software Engineer • Mathematecian </p>
-    <a href="#projects" class="btn">See My Work</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h2>Hello, I'm <span class="highlight">Talita Christine</span></h2>
+        <p class="subtitle">Entrepreneur • Junior Software Developer • Web Developer</p>
+        <p class="hero-desc">
+          Building digital experiences that blend technology with purpose. Founder of East African Naturals and a passionate problem-solver,
+          currently focusing on C#, .NET, Java, UWP, and SQL Server to create real-world solutions from Kampala, Uganda.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="photos/queena.jpeg" alt="Talita Christine" class="profile-img">
+          <div class="image-decoration"></div>
+        </div>
+        <div class="hero-badge">
+          <div class="badge-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <p>Founder & CEO<br><span>East African Naturals</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#about" class="scroll-link">
+        <span>Scroll</span>
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </a>
+    </div>
   </section>
 
+  <!-- About Section -->
   <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a dynamic entrepreneur, leader, and learner who is passionate about 
-      creating impact through both business and personal growth. I am the founder  and CEO of 
-      East African Naturals, a brand dedicated to offering authentic, natural hair and 
-      skin care solutions. 
-    </p>
-    <p>
-       I believe that blending technology with entrepreneurship can 
-       unlock innovative ways to serve clients and streamline operations.
-    </p>
-    <p>
-      My leadership journey has also inspired me to focus on communication and personal development.
-       I am  actively working on building confidence, clarity, and a strong voice as a leader; 
-       skills that she believes are vital for nurturing meaningful relationships.
-    </p>
-    <p>
-      My personal life is anchored by love and family. For me, family is both my greatest 
-      source of inspiration and the foundation upon which I builds my dreams. I am intentional
-       about balancing my ambitions with wellness, setting personal health goals 
-      that reflect my dedication to growth in every area of life.
-    </p>
-    <p>
-      I embody the belief that with hard work,learning, and love, one can create a fulfilling and 
-      impactful life.
-    </p>
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">My journey in technology and entrepreneurship</p>
+    </div>
+    <div class="about-container">
+      <div class="about-image">
+        <div class="about-img-wrapper">
+          <div class="color-block"></div>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="about-text">
+          I am <strong>Talita Christine</strong> (also known online as <strong>Talita Queen Precious</strong>), a dynamic entrepreneur, junior software developer,
+          and lifelong learner based in <strong>Kampala, Uganda</strong>. As the founder and CEO of <strong>East African Naturals</strong>, I've built a brand
+          dedicated to authentic, natural hair and skincare solutions rooted in wellness and sustainability.
+        </p>
+        <p class="about-text">
+          Alongside entrepreneurship, I actively grow my skills in <strong>software development</strong>, working with
+          <strong>C#, .NET, Java, JavaScript, HTML/CSS, SQL Server, and MySQL</strong>. I enjoy designing and building applications such as a
+          <strong>Hostel Management System</strong>, POS concepts, and other practical projects that connect user needs, clean design, and solid backend logic.
+        </p>
+        <p class="about-text">
+          My journey in technology began with a fascination for problem-solving and mathematics, which naturally evolved into software development.
+          I believe that blending technology with entrepreneurship unlocks innovative ways to serve clients, automate processes,
+          and create meaningful digital products for people and businesses.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div>
+              <h4>Family First</h4>
+              <p>My greatest inspiration and foundation</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div>
+              <h4>Wellness & Naturals</h4>
+              <p>Founder of East African Naturals, focused on healthy hair and skincare</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div>
+              <h4>Continuous Growth</h4>
+              <p>Actively improving in web, app, and database development</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div>
+              <h4>Tech Focus</h4>
+              <p>C#, .NET, Java, SQL Server, UWP, Web APIs & integrations</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-quote">
+          <p>"I embody the belief that with hard work, learning, and love, one can create a fulfilling and impactful life."</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-<section id="skills" class="section">
-  <h2>Skills</h2>
+  <!-- Skills Section -->
+  <section id="skills" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">My Skills</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">Technologies and competencies I work with</p>
+    </div>
+    
+    <div class="skills-container">
+      <div class="skills-category">
+        <h3 class="category-title">
+          <i class="fas fa-code category-icon"></i>
+          Programming Languages
+        </h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-java"></i>
+              </div>
+              <h4>Java</h4>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="90%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>C#</h4>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="85%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-terminal"></i>
+              </div>
+              <h4>C</h4>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="95%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-js"></i>
+              </div>
+              <h4>JavaScript</h4>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="75%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-html5"></i>
+              </div>
+              <h4>HTML &amp; CSS</h4>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="skills-category">
-    <h3>🖥️ Programming Languages</h3>
-    <div class="skills-grid">
-      <div class="skill">
-        <span><i class="fa-brands fa-java"></i> Java</span>
-        <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+      <div class="skills-category">
+        <h3 class="category-title">
+          <i class="fas fa-cogs category-icon"></i>
+          Frameworks &amp; Tools
+        </h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-react"></i>
+              </div>
+              <h4>React</h4>
+              <span class="skill-percent">40%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="40%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-microsoft"></i>
+              </div>
+              <h4>.NET Core / UWP</h4>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="80%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-bootstrap"></i>
+              </div>
+              <h4>Bootstrap</h4>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="95%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <h4>Git &amp; Version Control</h4>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="95%"></div>
+            </div>
+          </div>
+
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-plug"></i>
+              </div>
+              <h4>REST APIs &amp; Integrations</h4>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="70%"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-code"></i> C#</span>
-        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-terminal"></i> C</span>
-        <div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-brands fa-js"></i> JavaScript</span>
-        <div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-brands fa-html5"></i> HTML & <i class="fa-brands fa-css3-alt"></i> CSS</span>
-        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
+
+      <div class="skills-category">
+        <h3 class="category-title">
+          <i class="fas fa-star category-icon"></i>
+          Core Strengths
+        </h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <h4>Problem Solving</h4>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="95%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4>Analytical Thinking</h4>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="90%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h4>Mathematics</h4>
+              <span class="skill-percent">98%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="98%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-header">
+              <div class="skill-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h4>SQL (SQL Server &amp; MySQL)</h4>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level" data-level="85%"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <h2 class="section-title">My Projects</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">A showcase of my work and initiatives</p>
+    </div>
+    <div class="projects-container">
+<div class="project-card">
+  <div class="project-image">
+    <img src="photos/eanlogo.jpeg" alt="East African Naturals Project" class="project-img">
+    <div class="project-overlay">
+      <a href="#" class="project-link">View Details</a>
+    </div>
+    <div class="project-tag">Entrepreneurship</div>
   </div>
-
-<div class="skills-category">
-  <h3>🖥️ Programming Languages & Frameworks</h3>
-  <div class="skills-grid">
-
-    <div class="skill">
-      <span>⚛️ React</span>
-      <div class="skill-bar"><div class="skill-level" data-level="40%" style="background-color:#FFB6C1;"></div></div>
+  <div class="project-content">
+    <h3 class="project-title">
+      <i class="fas fa-leaf project-icon"></i>
+      East African Naturals
+    </h3>
+    <p class="project-description">Natural hair &amp; skincare brand with products rooted in wellness, sustainability, and African heritage, founded and led from Kampala, Uganda.</p>
+    <div class="project-tech">
+      <span>Brand Development</span>
+      <span>E-commerce</span>
+      <span>Sustainability</span>
     </div>
-
-    <div class="skill">
-      <span>💜 .NET Core</span>
-      <div class="skill-bar"><div class="skill-level" data-level="80%" style="background-color:#FFB6C1;"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>🅱️ Bootstrap</span>
-      <div class="skill-bar"><div class="skill-level" data-level="95%" style="background-color:#FFB6C1;"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>🔀 Git</span>
-      <div class="skill-bar"><div class="skill-level" data-level="95%" style="background-color:#FFB6C1;"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>🟢 Node.js</span>
-      <div class="skill-bar"><div class="skill-level" data-level="50%" style="background-color:#FFB6C1;"></div></div>
-    </div>
-
-    <div class="skill">
-      <span>🌊 Tailwind CSS</span>
-      <div class="skill-bar"><div class="skill-level" data-level="40%" style="background-color:#FFB6C1;"></div></div>
-    </div>
-
   </div>
 </div>
 
-
-  <div class="skills-category">
-    <h3>⚙️ Frameworks & Development</h3>
-    <div class="skills-grid">
-      <div class="skill">
-        <span><i class="fa-brands fa-microsoft"></i> .NET / .NET Core</span>
-        <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-brands fa-windows"></i> UWP / Windows Store Apps</span>
-        <div class="skill-bar"><div class="skill-level" data-level="70%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-brands fa-react"></i> React.js (Learning)</span>
-        <div class="skill-bar"><div class="skill-level" data-level="40%"></div></div>
-      </div>
+<div class="project-card">
+  <div class="project-image">
+    <img src="photos/hostel.jpg" alt="Hostel Management System" class="project-img">
+    <div class="project-overlay">
+      <a href="#" class="project-link">View Details</a>
+    </div>
+    <div class="project-tag">Full-Stack Development</div>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">
+      <i class="fas fa-building project-icon"></i>
+      Hostel Management System
+    </h3>
+    <p class="project-description">
+      A full-stack application for hostel administration including student registration, room allocation, and fee management,
+      built with C#, SQL Server, UWP, and Web APIs, and designed to support features like SMS notifications.
+    </p>
+    <div class="project-tech">
+      <span>C#</span>
+      <span>SQL Server</span>
+      <span>UWP</span>
     </div>
   </div>
+</div>
 
-  <div class="skills-category">
-    <h3>🛠️ Tools & Platforms</h3>
-    <div class="skills-grid">
-      <div class="skill">
-        <span><i class="fa-brands fa-github"></i> Git & GitHub</span>
-        <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-laptop-code"></i> Visual Studio / VS Code</span>
-        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-database"></i> SQL & Databases</span>
-        <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
-      </div>
+<div class="project-card">
+  <div class="project-image">
+    <img src="photos/web.jpg" alt="Portfolio Website" class="project-img">
+    <div class="project-overlay">
+      <a href="#" class="project-link">View Details</a>
+    </div>
+    <div class="project-tag">Web Development</div>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">
+      <i class="fas fa-laptop-code project-icon"></i>
+      Portfolio Website
+    </h3>
+    <p class="project-description">This responsive portfolio website showcasing my skills, projects, and journey as a developer and entrepreneur, with attention to layout, usability, and clean code.</p>
+    <div class="project-tech">
+      <span>HTML/CSS</span>
+      <span>JavaScript</span>
+      <span>UI/UX Design</span>
     </div>
   </div>
+</div>
 
-  <div class="skills-category">
-    <h3>🌟 Core Strengths</h3>
-    <div class="skills-grid">
-      <div class="skill">
-        <span><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</span>
-        <div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-brain"></i> Analytical Thinking</span>
-        <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
-      </div>
-      <div class="skill">
-        <span><i class="fa-solid fa-calculator"></i> Mathematics</span>
-        <div class="skill-bar"><div class="skill-level" data-level="98%"></div></div>
-      </div>
+<div class="project-card">
+  <div class="project-image">
+    <img src="photos/pos.png" alt="POS System" class="project-img">
+    <div class="project-overlay">
+      <a href="#" class="project-link">View Details</a>
+    </div>
+    <div class="project-tag">Learning Project</div>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">
+      <i class="fas fa-cash-register project-icon"></i>
+      POS System
+    </h3>
+    <p class="project-description">
+      A desktop application mockup for inventory and sales management with intuitive UI and reporting features,
+      built as a learning project to strengthen C#, database design, and user-centered design.
+    </p>
+    <div class="project-tech">
+      <span>C#</span>
+      <span>Desktop App</span>
+      <span>Inventory Management</span>
     </div>
   </div>
-</section>
+</div>
 
+<div class="project-card">
+  <div class="project-image">
+    <img src="photos/ROYAL PERFUMS LOGO.jpg" alt="Royal Scents Perfume Retail Concept" class="project-img">
+    <div class="project-overlay">
+      <a href="#" class="project-link">View Details</a>
+    </div>
+    <div class="project-tag">Brand & E-commerce</div>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">
+      <i class="fas fa-crown project-icon"></i>
+      Royal Scents
+    </h3>
+    <p class="project-description">A complete luxury perfume retail concept with the theme "The Regal Quartier." Developed unique branding including the RQ monogram, immersive customer journey, and full e-commerce strategy for an exclusive scent discovery experience.</p>
+    <div class="project-tech">
+      <span>Brand Strategy</span>
+      <span>UI/UX Design</span>
+      <span>E-commerce</span>
+    </div>
+  </div>
+</div>
+      </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="photos/eanlogo.jpeg" alt="East African Naturals Project" class="project-img">
-        <h3>🌿 East African Naturals</h3>
-        <p>Natural hair & skincare brand with products rooted in wellness and sustainability.</p>
+  <!-- Experience & Education Section -->
+  <section id="experience" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Experience &amp; Education</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">My professional journey and learning path</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – 2023</div>
+        <div class="timeline-content">
+          <div class="timeline-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3 class="timeline-title">Junior Developer at Timex IT Consulting</h3>
+          <p class="timeline-description">
+            Assisted in building and maintaining software by writing code, fixing bugs, and learning best practices.
+            Supported senior developers while gaining real-world experience in .NET, databases, and application development.
+          </p>
+        </div>
       </div>
-      <div class="project-card">
-        <img src="photos/web.jpg" alt="Website" class="project-img">
-        <h3>💻 Portfolio Website</h3>
-        <p>This site! A showcase of my journey into web development.</p>
+      <div class="timeline-item">
+        <div class="timeline-date">2021 – Present</div>
+        <div class="timeline-content">
+          <div class="timeline-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3 class="timeline-title">Founder and CEO, East African Naturals</h3>
+          <p class="timeline-description">
+            Created and scaled a natural beauty brand, managing product development, branding, and online operations
+            while preparing for a physical store launch and customer-focused wellness experiences.
+          </p>
+        </div>
       </div>
-      <div class="project-card">
-        <img src="photos/pos.png" alt="POS System" class="project-img">
-        <h3>📊 POS System (Learning Project)</h3>
-        <p>A simple desktop app mockup for inventory and sales management.</p>
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – Present</div>
+        <div class="timeline-content">
+          <div class="timeline-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="timeline-title">Web Development</h3>
+          <p class="timeline-description">
+            Building and experimenting with websites while learning front-end and back-end skills such as HTML, CSS,
+            JavaScript, responsive design, accessibility, and integration with APIs and databases.
+          </p>
+        </div>
       </div>
-      <div class="project-card">
-      <img src="photos/hostel.jpg" alt="Hostel Management System" class="project-img">
-      <h3>🏠 Hostel Management System</h3>
-      <p>
-        A full-stack application designed to simplify hostel administration —
-        including student registration, room allocation, fee management, and reporting.
-        Built using <strong>C#</strong>, <strong>SQL Server</strong>, and <strong>XAML (UWP)</strong>.
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – Present</div>
+        <div class="timeline-content">
+          <div class="timeline-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="timeline-title">App Development (UWP &amp; .NET)</h3>
+          <p class="timeline-description">
+            Practicing building Windows and web applications with C# and .NET technologies, including a Hostel Management
+            System using UWP, SQL Server, and Web APIs, with a focus on clean architecture and real-world use cases.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024 – Present</div>
+        <div class="timeline-content">
+          <div class="timeline-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="timeline-title">Database Programming</h3>
+          <p class="timeline-description">
+            Designing, writing, and optimizing database code using SQL Server and MySQL to store, manage, and retrieve data efficiently
+            for applications such as hostel management, POS concepts, and other learning projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">Have a question or collaboration idea? Let's connect!</p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <p>talitaprecious@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3>Location</h3>
+            <p>Kampala, Uganda</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <p>+256788828978</p>
+          </div>
+        </div>
+        <div class="contact-social">
+          <h3>Connect With Me</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/mdkykwyr" method="POST" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your number" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Talita<span>Christine</span></div>
+      <p class="footer-quote">"Building digital experiences with purpose and passion"</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-copyright">
+        © 2025 Talita Queen Christine. All rights reserved. | Built with <i class="fas fa-heart"></i> and lots of learning
       </p>
     </div>
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <h2>Experience & Education</h2>
-    <div class="timeline">
-      <div class="entry">
-        <h3>Junior Developer at Timex IT Consulting</h3>
-        <span>2022 – 2023</span>
-        <p>Assisted in building and maintaining software by writing code, fixing bugs, learning best practices,
-          <br> and supporting senior developers while gaining real-world experience.</p>
-      </div>
-      <div class="entry">
-        <h3>Founder and CEO, East African Naturals</h3>
-        <span>2021 – Present</span>
-        <p>Created and scaled a natural beauty brand, running online and preparing for a physical store.</p>
-      </div>
-      <div class="entry">
-        <h3>Web Development</h3>
-        <span>2024 – Present</span>
-        <p>Building and experimenting with websites while learning front-end and back-end skills like HTML, CSS, 
-         <br> JavaScript, frameworks, debugging, and version control.</p>
-      </div>
-      <div class="entry">
-        <h3>App Development</h3>
-        <span>2024 – Present</span>
-        <p>Practicing building mobile or web applications while gaining skills in coding, 
-          UI/UX, <br> and development tools through hands-on learning.</p>
-      </div>
-      <div class="entry">
-        <h3>Database Programmer</h3>
-        <span>2024 – Present</span>
-        <p>Designing, writing, and optimizing database code to store, manage, and retrieve data efficiently for <br> software applications</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>Have a question or collaboration idea? Drop me a message below 👇</p>
-
-  <form action="https://formspree.io/f/mdkykwyr" method="POST" class="contact-form">
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="_replyto" placeholder="Enter your email" required>
-    </div>
-
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your number" required>
-    </div>
-
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
-    </div>
-
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
-
-  <footer>
-    <p>© 2025 Talita Queen Christine | Built with ❤️ and lots of learning</p>
   </footer>
 
+  <!-- Success Popup -->
+  <div id="successPopup" class="success-popup">
+    <div class="popup-content">
+      <i class="fas fa-check-circle"></i>
+      <p>Message has been sent successfully!</p>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
   <script src="js/script.js"></script>
-
-<script>
-  const form = document.getElementById("contactForm");
-  const successPopup = document.getElementById("successPopup");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop redirect
-
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      successPopup.classList.add("show");
-      form.reset();
-
-      setTimeout(() => {
-        successPopup.classList.remove("show");
-      }, 3000);
-
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-</script>
-
-
-<div id="successPopup" class="success-popup">
-  <span>✅ Message sent successfully!</span>
-</div>
-
-<script>
-  function smoothScroll(target, duration) {
-    const start = window.pageYOffset;
-    const end = document.querySelector(target).offsetTop;
-    const distance = end - start;
-    let startTime = null;
-
-    function animation(currentTime) {
-      if (!startTime) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, start, distance, duration);
-      window.scrollTo(0, run);
-
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(animation);
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      smoothScroll(this.getAttribute("href"), 1200); // 1200ms = slower and smooth
-    });
-  });
-</script>
-
 </body>
 </html>
