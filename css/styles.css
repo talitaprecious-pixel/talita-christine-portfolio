@@ -372,19 +372,34 @@ body.dark-mode .skill {
   width: 100%;
   height: 230px;
   object-fit: cover;
+  display: block;
+}
+
+/* Featured first card */
+.project-card:first-child {
+  grid-column: span 2;
 }
 
 .project-card:first-child .project-img {
   height: 290px;
 }
 
+.project-card:first-child h3 {
+  font-size: 1.35rem;
+}
+
+/* Dashboard screenshot only */
 .dashboard-img {
   height: auto !important;
+  max-height: none !important;
   object-fit: contain !important;
+  object-position: top center;
+  display: block;
   background: #f8f6f4;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 0;
 }
+
 .project-card h3 {
   padding: 1.3rem 1.3rem 0.4rem;
   color: var(--text-primary);
@@ -395,15 +410,6 @@ body.dark-mode .skill {
   padding: 0 1.3rem 1.5rem;
   color: var(--text-secondary);
   font-size: 0.97rem;
-}
-
-/* make first project feel featured */
-.project-card:first-child {
-  grid-column: span 2;
-}
-
-.project-card:first-child h3 {
-  font-size: 1.35rem;
 }
 
 /* ===== EXPERIENCE ===== */
