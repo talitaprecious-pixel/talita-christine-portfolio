@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all functionality
-  initThemeToggle();
-  initMobileMenu();
-  initSkillAnimations();
-  initSmoothScroll();
-  initBackToTop();
-  initFormSubmission();
-  initScrollAnimations();
-});document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initMobileMenu();
   initSkillAnimations();
@@ -29,13 +20,18 @@ function initThemeToggle() {
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
   const savedTheme = localStorage.getItem("theme");
 
-  const applyTheme = (isDark) => {
+  function applyTheme(isDark) {
     document.body.classList.toggle("dark-mode", isDark);
     toggleBtn.textContent = isDark ? "☀️" : "🌙";
-    toggleBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-  };
+    toggleBtn.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode"
+    );
+  }
 
-  const shouldUseDark = savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches);
+  const shouldUseDark =
+    savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches);
+
   applyTheme(shouldUseDark);
 
   toggleBtn.addEventListener("click", () => {
@@ -51,34 +47,34 @@ function initThemeToggle() {
 function initMobileMenu() {
   const nav = document.querySelector("nav");
   const navLinks = document.querySelector(".nav-links");
+
   if (!nav || !navLinks) return;
 
   let menuToggle = document.getElementById("mobile-menu");
 
-  // Create the mobile button if it doesn't exist
   if (!menuToggle) {
     menuToggle = document.createElement("button");
     menuToggle.id = "mobile-menu";
     menuToggle.className = "mobile-menu-btn";
     menuToggle.setAttribute("aria-label", "Toggle navigation menu");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.innerHTML = '<span></span><span></span><span></span>';
+    menuToggle.innerHTML = "<span></span><span></span><span></span>";
     nav.appendChild(menuToggle);
   }
 
-  const closeMenu = () => {
+  function closeMenu() {
     navLinks.classList.remove("active");
     menuToggle.classList.remove("active");
     menuToggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
-  };
+  }
 
-  const openMenu = () => {
+  function openMenu() {
     navLinks.classList.add("active");
     menuToggle.classList.add("active");
     menuToggle.setAttribute("aria-expanded", "true");
     document.body.classList.add("menu-open");
-  };
+  }
 
   menuToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.contains("active");
@@ -100,8 +96,7 @@ function initMobileMenu() {
   });
 
   document.addEventListener("click", (e) => {
-    const clickedInsideNav = nav.contains(e.target);
-    if (!clickedInsideNav && window.innerWidth <= 768) {
+    if (window.innerWidth <= 768 && !nav.contains(e.target)) {
       closeMenu();
     }
   });
@@ -154,7 +149,10 @@ function initSmoothScroll() {
 
       const headerHeight = header ? header.offsetHeight : 0;
       const targetPosition =
-        targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+        targetElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        10;
 
       window.scrollTo({
         top: targetPosition,
@@ -170,7 +168,6 @@ function initSmoothScroll() {
 function initBackToTop() {
   let backToTopBtn = document.getElementById("backToTop");
 
-  // Create button if it doesn't exist
   if (!backToTopBtn) {
     backToTopBtn = document.createElement("button");
     backToTopBtn.id = "backToTop";
@@ -179,13 +176,13 @@ function initBackToTop() {
     document.body.appendChild(backToTopBtn);
   }
 
-  const toggleVisibility = () => {
+  function toggleVisibility() {
     if (window.pageYOffset > 320) {
       backToTopBtn.classList.add("show");
     } else {
       backToTopBtn.classList.remove("show");
     }
-  };
+  }
 
   window.addEventListener("scroll", toggleVisibility);
   toggleVisibility();
@@ -212,7 +209,6 @@ function initFormSubmission() {
 
     const formData = new FormData(form);
     const submitBtn = form.querySelector('button[type="submit"]');
-
     if (!submitBtn) return;
 
     const originalText = submitBtn.innerHTML;
@@ -295,7 +291,7 @@ function initTestimonials() {
   let currentIndex = 0;
   let autoPlay;
 
-  const showTestimonial = (index) => {
+  function showTestimonial(index) {
     testimonialCards.forEach((card, i) => {
       card.classList.toggle("active", i === index);
     });
@@ -305,17 +301,18 @@ function initTestimonials() {
     });
 
     currentIndex = index;
-  };
+  }
 
-  const goNext = () => {
+  function goNext() {
     const nextIndex = (currentIndex + 1) % testimonialCards.length;
     showTestimonial(nextIndex);
-  };
+  }
 
-  const goPrev = () => {
-    const prevIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+  function goPrev() {
+    const prevIndex =
+      (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
     showTestimonial(prevIndex);
-  };
+  }
 
   if (nextBtn) nextBtn.addEventListener("click", goNext);
   if (prevBtn) prevBtn.addEventListener("click", goPrev);
@@ -324,15 +321,14 @@ function initTestimonials() {
     dot.addEventListener("click", () => showTestimonial(index));
   });
 
-  // Optional autoplay for a more polished feel
-  const startAutoPlay = () => {
+  function startAutoPlay() {
     stopAutoPlay();
     autoPlay = setInterval(goNext, 5000);
-  };
+  }
 
-  const stopAutoPlay = () => {
+  function stopAutoPlay() {
     if (autoPlay) clearInterval(autoPlay);
-  };
+  }
 
   const carousel = document.querySelector(".testimonial-carousel");
   if (carousel) {
@@ -356,10 +352,10 @@ function initCurrentYear() {
 }
 
 /* =========================
-   Inject helper animation CSS
+   Inject Helper CSS
 ========================= */
-const style = document.createElement("style");
-style.textContent = `
+const helperStyle = document.createElement("style");
+helperStyle.textContent = `
   .reveal-base {
     opacity: 0;
     transform: translateY(24px);
@@ -439,195 +435,4 @@ style.textContent = `
     }
   }
 `;
-document.head.appendChild(style);
-
-// Theme Toggle
-function initThemeToggle() {
-  const toggleBtn = document.getElementById("theme-toggle");
-  const icon = toggleBtn.querySelector("i");
-  
-  // Check for saved theme or prefer-color-scheme
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  const savedTheme = localStorage.getItem("theme");
-  
-  if (savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches)) {
-    document.body.classList.add("dark-mode");
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-  }
-  
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    
-    if (document.body.classList.contains("dark-mode")) {
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-      localStorage.setItem("theme", "dark");
-    } else {
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-      localStorage.setItem("theme", "light");
-    }
-  });
-}
-
-// Mobile Menu Toggle
-function initMobileMenu() {
-  const menuToggle = document.getElementById("mobile-menu");
-  const navLinks = document.querySelector(".nav-links");
-  
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    navLinks.classList.toggle("active");
-  });
-  
-  // Close menu when clicking on a link
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      menuToggle.classList.remove("active");
-      navLinks.classList.remove("active");
-    });
-  });
-}
-
-// Skill Bar Animations
-function initSkillAnimations() {
-  const skillBars = document.querySelectorAll(".skill-level");
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const level = entry.target.getAttribute("data-level");
-        entry.target.style.width = level;
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.5,
-    rootMargin: "0px 0px -50px 0px"
-  });
-  
-  skillBars.forEach(bar => observer.observe(bar));
-}
-
-// Smooth Scroll
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute("href");
-      if (targetId === "#") return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
-      
-      const headerHeight = document.querySelector("header").offsetHeight;
-      const targetPosition = targetElement.offsetTop - headerHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    });
-  });
-}
-
-// Back to Top Button
-function initBackToTop() {
-  const backToTopBtn = document.getElementById("backToTop");
-  
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
-    }
-  });
-  
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-}
-
-// Form Submission
-function initFormSubmission() {
-  const form = document.querySelector(".contact-form");
-  const successPopup = document.getElementById("successPopup");
-  
-  if (!form) return;
-  
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        // Show success popup
-        successPopup.classList.add("show");
-        form.reset();
-        
-        // Hide popup after 3 seconds
-        setTimeout(() => {
-          successPopup.classList.remove("show");
-        }, 3000);
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-      console.error(error);
-    } finally {
-      // Reset button state
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-    }
-  });
-}
-
-// Scroll Animations for Elements
-function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll(
-    ".about-content, .skill-card, .project-card, .timeline-content, .contact-card"
-  );
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animated");
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  });
-  
-  animatedElements.forEach(el => observer.observe(el));
-}
-
-// Add CSS for animated class
-const style = document.createElement('style');
-style.textContent = `
-  .animated {
-    animation: fadeInUp 0.8s ease forwards;
-  }
-`;
-document.head.appendChild(style);
+document.head.appendChild(helperStyle);
