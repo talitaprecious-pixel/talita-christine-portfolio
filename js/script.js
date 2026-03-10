@@ -404,35 +404,49 @@ helperStyle.textContent = `
   }
 
   @media (max-width: 768px) {
-    .mobile-menu-btn {
-      display: inline-flex;
-    }
-
-    .nav-links {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      align-items: stretch;
-      padding-top: 0.75rem;
-    }
-
-    .nav-links.active {
-      display: flex;
-    }
-
-    .nav-links li {
-      width: 100%;
-    }
-
-    .nav-links a {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-
-    body.menu-open {
-      overflow: hidden;
-    }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-`;
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .nav-links a {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 4rem;
+    min-height: auto;
+  }
+
+  .section {
+    padding: 4.5rem 1rem;
+  }
+
+  .contact-form,
+  .skills-category,
+  .testimonial-card,
+  .entry {
+    padding: 1.3rem;
+  }
+
+  .project-img {
+    height: 210px;
+  }
+
+  .dashboard-img {
+    height: auto !important;
+    padding: 8px;
+  }
+}
 document.head.appendChild(helperStyle);
