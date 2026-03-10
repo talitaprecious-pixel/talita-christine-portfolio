@@ -87,6 +87,20 @@ section {
   scroll-margin-top: 90px;
 }
 
+/* smoother rendering */
+.project-card,
+.skill,
+.btn,
+.testimonial-card,
+.entry,
+.skills-category,
+.testimonial-btn,
+#theme-toggle {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
 /* ===== GLOBAL SECTION STYLING ===== */
 .section {
   max-width: var(--max-width);
@@ -161,6 +175,7 @@ nav {
 .nav-links a:hover {
   color: var(--accent-primary);
   background: rgba(201, 121, 99, 0.08);
+  transform: translateY(-1px);
 }
 
 #theme-toggle {
@@ -177,7 +192,7 @@ nav {
 }
 
 #theme-toggle:hover {
-  transform: translateY(-2px) rotate(10deg);
+  transform: translateY(-2px) rotate(10deg) scale(1.03);
   box-shadow: var(--shadow-md);
 }
 
@@ -225,6 +240,11 @@ nav {
   border: 8px solid rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-lg);
   margin: 0 auto 2rem;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-img:hover {
+  transform: scale(1.02);
 }
 
 .hero h2 {
@@ -262,7 +282,7 @@ nav {
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: var(--shadow-md);
 }
 
@@ -287,6 +307,12 @@ nav {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.skills-category:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .skills-category h3 {
@@ -314,7 +340,7 @@ body.dark-mode .skill {
 }
 
 .skill:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.01);
   box-shadow: var(--shadow-sm);
 }
 
@@ -342,7 +368,7 @@ body.dark-mode .skill {
   width: 0;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  transition: width 1.2s ease;
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ===== PROJECTS ===== */
@@ -363,10 +389,6 @@ body.dark-mode .skill {
   backdrop-filter: blur(8px);
 }
 
-.project-card {
-  will-change: transform;
-}
-
 .project-card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-md);
@@ -377,6 +399,11 @@ body.dark-mode .skill {
   height: 230px;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.03);
 }
 
 /* Featured first card */
@@ -444,6 +471,12 @@ body.dark-mode .skill {
   border-radius: 22px;
   box-shadow: var(--shadow-sm);
   margin-left: 1rem;
+  transition: var(--transition);
+}
+
+.entry:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .entry::before {
@@ -514,7 +547,7 @@ body.dark-mode .skill {
   padding: 2rem 1.5rem;
   box-shadow: var(--shadow-sm);
   max-width: 100%;
-  animation: fadeUp 0.45s ease;
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .testimonial-card.active {
@@ -606,6 +639,12 @@ body.dark-mode .skill {
   padding: 2rem;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+
+.contact-form:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .form-group {
@@ -700,11 +739,11 @@ footer p {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(28px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -721,6 +760,10 @@ footer p {
 
   .project-card:first-child .project-img {
     height: 230px;
+  }
+
+  .project-card:first-child .dashboard-img {
+    height: auto !important;
   }
 
   .testimonial-carousel {
@@ -771,6 +814,11 @@ footer p {
 
   .project-img {
     height: 210px;
+  }
+
+  .dashboard-img {
+    height: auto !important;
+    padding: 8px;
   }
 }
 
