@@ -370,8 +370,9 @@ body.dark-mode .skill {
 
 .project-img {
   width: 100%;
-  height: 230px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .project-card h3 {
@@ -389,10 +390,6 @@ body.dark-mode .skill {
 /* make first project feel featured */
 .project-card:first-child {
   grid-column: span 2;
-}
-
-.project-card:first-child .project-img {
-  height: 290px;
 }
 
 .project-card:first-child h3 {
