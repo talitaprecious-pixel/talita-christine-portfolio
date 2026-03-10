@@ -370,11 +370,21 @@ body.dark-mode .skill {
 
 .project-img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  height: 230px;
+  object-fit: cover;
 }
 
+.project-card:first-child .project-img {
+  height: 290px;
+}
+
+.dashboard-img {
+  height: auto !important;
+  object-fit: contain !important;
+  background: #f8f6f4;
+  padding: 12px;
+  border-radius: 10px;
+}
 .project-card h3 {
   padding: 1.3rem 1.3rem 0.4rem;
   color: var(--text-primary);
