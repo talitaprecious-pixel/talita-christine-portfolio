@@ -31,7 +31,7 @@
   --radius-md: 20px;
   --radius-lg: 28px;
 
-  --transition: all 0.35s ease;
+  --transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   --max-width: 1180px;
 }
 
@@ -363,8 +363,12 @@ body.dark-mode .skill {
   backdrop-filter: blur(8px);
 }
 
+.project-card {
+  will-change: transform;
+}
+
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-md);
 }
 
