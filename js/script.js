@@ -105,19 +105,46 @@ function initMobileMenu() {
    Skill Bar Animations
 ========================= */
 function initSkillAnimations() {
+  const skillsSection = document.getElementById("skills");
   const skillBars = document.querySelectorAll(".skill-level");
-  if (!skillBars.length) return;
 
-  skillBars.forEach((bar, index) => {
-    const level = bar.getAttribute("data-level");
-    if (!level) return;
+  if (!skillsSection || !skillBars.length) return;
 
-    setTimeout(() => {
-      bar.style.width = level;
-    }, index * 120);
-  });
+  let hasAnimated = false;
+
+  function animateBars() {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    skillBars.forEach((bar, index) => {
+      const level = bar.getAttribute("data-level");
+      if (!level) return;
+
+      setTimeout(() => {
+        bar.style.width = level;
+      }, index * 120);
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animateBars();
+          obs.unobserve(skillsSection);
+        });
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(skillsSection);
+  } else {
+    animateBars();
+  }
 }
-
 /* =========================
    Smooth Scroll
 ========================= */
