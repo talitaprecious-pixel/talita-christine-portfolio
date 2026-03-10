@@ -398,6 +398,7 @@ body.dark-mode .skill {
   background: #f8f6f4;
   padding: 12px;
   border-radius: 0;
+  aspect-ratio: auto;
 }
 
 .project-card h3 {
