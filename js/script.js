@@ -77,8 +77,7 @@ function initMobileMenu() {
   }
 
   menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.contains("active");
-    if (isOpen) {
+    if (navLinks.classList.contains("active")) {
       closeMenu();
     } else {
       openMenu();
@@ -115,9 +114,7 @@ function initSkillAnimations() {
         if (!entry.isIntersecting) return;
 
         const level = entry.target.getAttribute("data-level");
-        if (level) {
-          entry.target.style.width = level;
-        }
+        if (level) entry.target.style.width = level;
 
         obs.unobserve(entry.target);
       });
@@ -304,14 +301,11 @@ function initTestimonials() {
   }
 
   function goNext() {
-    const nextIndex = (currentIndex + 1) % testimonialCards.length;
-    showTestimonial(nextIndex);
+    showTestimonial((currentIndex + 1) % testimonialCards.length);
   }
 
   function goPrev() {
-    const prevIndex =
-      (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
-    showTestimonial(prevIndex);
+    showTestimonial((currentIndex - 1 + testimonialCards.length) % testimonialCards.length);
   }
 
   if (nextBtn) nextBtn.addEventListener("click", goNext);
@@ -404,49 +398,36 @@ helperStyle.textContent = `
   }
 
   @media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .mobile-menu-btn {
+      display: inline-flex;
+    }
 
-  .logo {
-    width: 100%;
-    text-align: center;
-  }
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 0.75rem;
+    }
 
-  .nav-links {
-    justify-content: center;
-    gap: 0.2rem;
-  }
+    .nav-links.active {
+      display: flex;
+    }
 
-  .nav-links a {
-    padding: 0.55rem 0.85rem;
-    font-size: 0.9rem;
-  }
+    .nav-links li {
+      width: 100%;
+    }
 
-  .hero {
-    padding-top: 4rem;
-    min-height: auto;
-  }
+    .nav-links a {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
 
-  .section {
-    padding: 4.5rem 1rem;
+    body.menu-open {
+      overflow: hidden;
+    }
   }
+`;
 
-  .contact-form,
-  .skills-category,
-  .testimonial-card,
-  .entry {
-    padding: 1.3rem;
-  }
-
-  .project-img {
-    height: 210px;
-  }
-
-  .dashboard-img {
-    height: auto !important;
-    padding: 8px;
-  }
-}
 document.head.appendChild(helperStyle);
