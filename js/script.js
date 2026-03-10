@@ -108,24 +108,14 @@ function initSkillAnimations() {
   const skillBars = document.querySelectorAll(".skill-level");
   if (!skillBars.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
+  skillBars.forEach((bar, index) => {
+    const level = bar.getAttribute("data-level");
+    if (!level) return;
 
-        const level = entry.target.getAttribute("data-level");
-        if (level) entry.target.style.width = level;
-
-        obs.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.35,
-      rootMargin: "0px 0px -40px 0px",
-    }
-  );
-
-  skillBars.forEach((bar) => observer.observe(bar));
+    setTimeout(() => {
+      bar.style.width = level;
+    }, index * 120);
+  });
 }
 
 /* =========================
